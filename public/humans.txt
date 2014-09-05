@@ -1,0 +1,22 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Saul Hardman -- @saulhardman
+
+# TECHNOLOGY COLOPHON
+
+    - jQuery
+    - Modernizr
+    - Google Analytics
+    - RequireJS
+    - Handlebars
+    - Retina.js
+    - Frontmend
+    - Sketch.js
+    - jStorage
+    - Socket.IO
+    - ImpactJS
+    - Bower
+    - Grunt

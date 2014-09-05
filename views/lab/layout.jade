@@ -1,0 +1,24 @@
+doctype 5
+html(lang="en", class="no-js", manifest="/manifest.appcache")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width,initial-scale=1.0,minimum-scale=1.0")
+        title= title
+        link(rel="shortcut icon", href="/img/favicon.png", type="image/png")
+        if view == "controller"
+            link(rel="stylesheet", href="/css/controller.css")
+        else
+            link(rel="stylesheet", href="/css/lab.css")
+        script(src="//use.typekit.net/har3iuy.js")
+        script.
+            try{Typekit.load();}catch(e){}
+        script(src="/js/utilities/modernizr.min.js")
+    body(class="#{view}")
+        block content
+
+        script.
+            var config = {
+                    debug: #{_debug}
+                };
+
+        block javascript

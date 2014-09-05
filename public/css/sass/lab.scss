@@ -1,0 +1,429 @@
+@import "compass";
+@import "normalize";
+@import "mixins";
+
+$color: #fff;
+$black: #222;
+$green: #00DCB4;
+$blue: #008cff;
+$pink: #ff00ff;
+$purple: #8c00ff;
+$yellow: #ffff00;
+
+html {
+    font-size: 62.5%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #fff;
+    font-family: "proxima-nova", helvetica, arial, verdana, sans-serif;
+}
+
+body {
+    @include font-size(14);
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Author: Saul Hardman (@saulhardman) */
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+    background: #222;
+
+}
+
+.index {
+    position: relative;
+    #container {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 800px;
+        height: 600px;
+        text-align: center;
+        @include background(radial-gradient(50% 315px, circle, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0) 250px));
+        z-index: 2;
+    }
+}
+
+.header {
+    h2 {
+        margin: 0;
+    }
+    p {
+        margin: 0;
+        @include font-size(16);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.graviton-industries-logo {
+    @extend .ir;
+
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 450px;
+    height: 125px;
+    @include at2x("../img/graviton-industries-logo", "png", 450px, 125px);
+}
+
+.banner {
+    @extend .ir;
+
+    margin: 100px auto;
+    width: 720px;
+    height: 122px;
+    @include at2x("../img/gyroscopes-and-isotopes-logo-large", "png", 720px, 122px);
+}
+
+.link-button {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    padding: 0 15px;
+    color: $black;
+    @include font-size(14);
+    @include line-height(32);
+    font-weight: 500;
+    text-decoration: none;
+    background: #fff;
+
+    &:hover {
+        color: $black;
+        background: rgba(#fff, 0.6);
+    }
+
+    &:last-of-type {
+        margin: 0;
+    }
+}
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    canvas {
+        display: block;
+    }
+}
+
+#players {
+
+    margin: 0;
+    padding: 0;
+
+}
+
+.winner {
+    width: 800px;
+    height: 200px;
+}
+
+.title {
+
+    text-align: center;
+
+}
+
+.winner-title {
+
+    @extend .title;
+
+    margin: 0 0 100px;
+
+}
+
+.player {
+
+    margin: 60px auto 0;
+    width: 40px;
+    height: 40px;
+    @include border-radius(50%);
+
+}
+
+.error,
+.game,
+.gameover,
+.lobby,
+.intro {
+    position: relative;
+    z-index: 2;
+}
+
+.intro {
+    width: 800px;
+    height: 600px;
+}
+
+.lobby,
+.game,
+.gameover,
+.intro {
+    text-align: center;
+    @include background(radial-gradient(50% 40%, circle, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0) 250px));
+
+    .banner {
+        margin: 0 auto 60px;
+    }
+}
+
+.lobby,
+.gameover,
+.intro {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.lobby {
+    width: 800px;
+    height: 610px;
+
+    .instructions {
+        margin: 0 0 40px;
+    }
+
+    #qrcode,
+    .or,
+    .shortUrl {
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    #qrcode {
+        width: 150px;
+        height: 150px;
+        background: #fff;
+
+        canvas {
+            display: block;
+            padding: 5px 0 0 5px;
+        }
+    }
+
+    .or {
+        margin: 0 40px;
+        width: 100px;
+        height: 100px;
+        color: $black;
+        text-align: center;
+        @include font-size(24);
+        @include line-height(100);
+        font-weight: 600;
+        text-transform: uppercase;
+        background: #fff;
+        @include border-radius(50%);
+    }
+
+    .shortUrl {
+        color: $color;
+        text-decoration: none;
+        @include font-size(18);
+        font-weight: 500;
+        @include letter-spacing(1);
+    }
+
+    #start-experiment {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100px;
+        height: 100px;
+        color: $black;
+        @include font-size(76);
+        @include line-height(100);
+        background: #fff;
+        border: none;
+        outline: 0;
+    }
+}
+
+#players {
+    @extend .clearfix;
+    position: relative;
+    margin: 60px auto 0;
+    height: 100px;
+    list-style: none;
+}
+
+.player,
+.player-slot {
+    @include box-sizing(border-box);
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include border-radius(50%);
+
+    @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+            left: #{($i - 1) * 200}px;
+        }
+    }
+    @for $i from 5 through 8 {
+        &:nth-child(#{$i}) {
+            left: #{($i - 5) * 200}px;
+        }
+    }
+}
+
+.player {
+    margin: 10px 60px;
+    width: 80px;
+    height: 80px;
+
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 110px;
+        left: 50%;
+        margin: 0 0 0 -10px;
+        width: 0;
+        height: 0;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid #fff;
+    }
+}
+
+.player-name {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    margin: 0 0 0 -75px;
+    padding: 0 10px;
+    width: 130px;
+    color: $black;
+    @include line-height(32);
+    @include ellipsis();
+    background: #fff;
+}
+
+.player-slot {
+    margin: 0 50px;
+    width: 100px;
+    height: 100px;
+    color: $color;
+    @include font-size(32);
+    @include line-height(100);
+    font-weight: 600;
+    border: 1px solid #fff;
+}
+
+.ready {
+    border: 5px solid #fff;
+}
+
+.game {
+    padding: 40px;
+
+    .banner {
+        margin: 0 auto 40px;
+    }
+
+    .warning {
+        position: relative;
+        margin: 0 auto;
+        padding: 10px;
+        width: 800px;
+        height: 600px;
+        background: url("../img/warning.png") 0 0 repeat;
+    }
+
+    #canvas {
+        width: 800px;
+        height: 600px;
+    }
+
+}
+
+.gameover {
+    width: 800px;
+    height: 620px;
+
+    .player {
+        position: relative;
+        display: inline-block;
+        margin: 0 0 100px;
+    }
+
+    .player-name {
+        margin: 0 0 0 -100px;
+        width: 180px;
+    }
+
+    strong {
+        display: inline-block;
+        padding: 1px 5px;
+        color: $black;
+        background: #fff;
+    }
+
+    .rerun {
+        margin: 40px 0 0;
+    }
+}
+
+.player-message {
+
+    @extend .center;
+
+    padding: 0 40px;
+    height: 180px;
+    @include font-size(22);
+    text-align: center;
+
+}
+
+.error-message {
+
+    @extend .player-message;
+
+    &:before {
+
+        display: block;
+        margin: -40px 0 0;
+        content: "\25B2";
+        color: orange;
+        @include font-size(112);
+
+    }
+
+}

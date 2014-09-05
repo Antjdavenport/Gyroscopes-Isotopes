@@ -1,0 +1,176 @@
+@import "compass";
+@import "normalize";
+@import "mixins";
+
+$color: #fff;
+$font-size: 14;
+$font-family: "ratio", helvetica, arial, verdana, sans-serif;
+$text-highlight-color: #b3d4fc;
+$green: #00DCB4;
+
+html {
+    font-size: 62.5%;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    color: $color;
+    font-family: $font-family;
+}
+
+body {
+    @include font-size($font-size);
+}
+
+::-moz-selection {
+    background: $text-highlight-color;
+    text-shadow: none;
+}
+
+::selection {
+    background: $text-highlight-color;
+    text-shadow: none;
+}
+
+/* Author: Saul Hardman (@saulhardman) */
+
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    background: #222;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 720px;
+    height: 100%;
+    z-index: 2;
+}
+
+.header {
+    height: 100%;
+    width: 100%;
+    @include background(radial-gradient(50% 50%, circle, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0) 250px));
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        display: block;
+        margin: -9px 0 0 -4px;
+        width: 7px;
+        height: 7px;
+        background: #fff;
+        @include border-radius(50%);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        display: block;
+        margin: 0 0 0 -1px;
+        width: 0px;
+        height: 25%;
+        border-left: 1px dotted rgba(255, 255, 255, 0.2);
+    }
+}
+
+.banner {
+    @extend .ir;
+
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 450px;
+    height: 125px;
+    @include at2x("../img/graviton-industries-logo", "png", 450px, 125px);
+}
+
+a {
+    color: $color;
+    &:visited {
+        color: $color;
+    }
+    &:hover,
+    &:focus {
+        color: $green;
+    }
+}
+
+.main {
+    margin: 0 auto;
+    padding: 10px 0 240px;
+
+    h2,
+    p {
+        margin: 0 0 40px;
+    }
+
+    h2 {
+        margin-top: 45px;
+        font-family: "proxima-nova", helvetica, arial, verdana, sans-serif;
+        @include font-size(16);
+        @include line-height(0);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    p {
+        @include line-height(22);
+        font-weight: 300;
+        // text-align: justify;
+        @include column-count(3);
+        @include column-gap(40px);
+    }
+}
+
+.mug-shot,
+.mug-shot-link {
+    width: 180px;
+    height: 180px;
+}
+
+.experiment {
+    display: block;
+    text-align: center;
+
+    &:hover img {
+        @include opacity(0.8);
+    }
+
+    img {
+        width: 312px;
+        height: 53px;
+    }
+}
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    canvas {
+        display: block;
+    }
+}

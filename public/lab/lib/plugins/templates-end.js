@@ -1,0 +1,4 @@
+
+    Handlebars.templates = this["templates"];
+
+});

@@ -1,0 +1,13 @@
+<header class="header">
+    <h1 class="banner" role="banner">Gyroscopes &amp; Isotopes</h1>
+</header>
+
+<section class="main" role="main">
+    <p class="player" style="background: rgb({{winner.colour}});"><span class="player-name">{{winner.name}} survived!</span></p>
+    <p><strong>{{stats.consumed}}</strong> particles were consumed by the black hole.</p>
+    <p><strong>{{stats.positrons}}</strong> positrons were absorbed by participants' neutrons.</p>
+    <p><strong>{{stats.negatrons}}</strong> negatrons caused neutron decay.</p>
+    <p><strong>{{stats.electrons}}</strong> electrons were blasted into raw energy.</p>
+    <p>This experiment lasted <strong>{{stats.duration}}</strong> seconds.</p>
+    <a href="/gyroscopes-and-isotopes/lab/{{winner.labId}}" title="Click to play again" class="link-button rerun">Rerun the experiment</a>
+</section>

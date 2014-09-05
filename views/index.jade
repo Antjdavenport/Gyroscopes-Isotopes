@@ -1,0 +1,50 @@
+doctype 5
+html(lang="en", class="no-js", manifest="/manifest.appcache")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width,initial-scale=1.0,minimum-scale=1.0")
+    block title
+        title Graviton Industries Inc.
+    meta(name="description", content="Graviton Industries are an experimental games company, masquerading as a scientific research corporation.")
+    link(rel="shortcut icon", href="/img/favicon.png", type="image/png")
+    link(rel="stylesheet", href="css/main.css")
+    script(src="//use.typekit.net/har3iuy.js")
+    script.
+        try{Typekit.load();}catch(e){}
+    script(src="/js/utilities/modernizr.min.js")
+body
+    div(class="container")
+        header(class="header", role="banner")
+            h1(class="banner") Graviton Industries Inc.
+        section(class="main", role="main")
+            h2 Philisophy
+            p
+                strong Graviton Industries Inc.
+                |  are an experimental science company, dedicated to solving the World's biggest problems. We're doing so with the help of members of the public – willing participants whom we've labelled citizen scientists. We are working on a number of experiments at this moment in time, but only one of those is currently in the beta stage and available to the public – &#0020;
+                a(href="/gyroscopes-and-isotopes", title="Play the game now!") Gyroscopes &amp; Isotopes
+                |  gives the not-so-average Joe access to equipment necessary to perform complex particle collision experiments in the safety of their own homes. See below for more information on how you can be part of
+                strong  improving the future for all
+                | &#8482;.
+            h2 The Team
+            a(href="http://twitter.com/saulhardman", title="See Saul's profile on Twitter", class="mug-shot-link")
+                img(src="/img/mug-shot-1.jpg", alt="Graviton Industries Scientist; Saul Hardman", class="mug-shot")
+            img(src="/img/mug-shot-2.jpg", alt="Graviton Industries Scientist; Jon Moore", class="mug-shot")
+            img(src="/img/mug-shot-3.jpg", alt="Graviton Industries Scientist; Anthony Davenport", class="mug-shot")
+            img(src="/img/mug-shot-4.jpg", alt="Graviton Industries Scientist; Elijah", class="mug-shot")
+            h2 News Coverage
+            iframe(src="http://player.vimeo.com/video/62058466?title=0&amp;byline=0&amp;portrait=0&amp;color=00DCB4", width="720", height="405", frameborder="0", webkitAllowFullScreen, mozallowfullscreen, allowFullScreen)
+            h2 Experiments
+            a(href="/gyroscopes-and-isotopes", title="Play the game!", class="experiment")
+                img(src="/img/gyroscopes-and-isotopes-logo.png", alt="Gyroscopes & Isotopes Logo")
+
+    div(id="particles")
+
+    script.
+        var config = {
+            debug: #{_debug}
+        };
+
+    if _debug
+        script(data-main="/js/main", src="/js/components/requirejs/require.js")
+    else
+        script(src="/js/main.min.js")

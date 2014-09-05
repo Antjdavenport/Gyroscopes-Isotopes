@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    div(id="container", class="intro")
+        header(class="header")
+            h1(class="banner", role="banner") Gyroscopes &amp; Isotopes
+        section(class="main", role="main")
+            iframe(src="http://player.vimeo.com/video/62058719?title=0&amp;byline=0&amp;portrait=0&amp;color=00DCB4", width="720", height="406", frameborder="0", webkitAllowFullScreen, mozallowfullscreen, allowFullScreen)
+
+    div(id="particles")
+
+block javascript
+    script.
+        var config = {
+            debug: #{_debug}
+        };
+
+    if _debug
+        script(data-main="/js/main", src="/js/components/requirejs/require.js")
+    else
+        script(src="/js/main.min.js")

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    div(id="container", class="connecting")
+        h1(class="player-message") Connecting.
+
+    div(id="particles")
+
+block javascript
+    script.
+        var ImpactPrefix = "/lab/";
+        config.labId = "#{labId}";
+        config.controllerUrl = "#{controllerUrl}";
+        config.shortControllerUrl = "#{shortControllerUrl}";
+    if _debug
+        script(data-main="/js/lab", src="/js/components/requirejs/require.js")
+    else
+        script(src="/js/lab.min.js")

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    div(id="container")
+        header(class="header")
+            h2
+                a(href="/", title="Find out more about Graviton Industries Inc.", class="graviton-industries-logo") Graviton Industries Inc.
+            p Presents
+            h1(class="banner", role="banner") Gyroscopes &amp; Isotopes
+        section(class="main", role="main")
+            a(href="/gyroscopes-and-isotopes/lab/create", title="Click to create a new lab", class="link-button") Create a lab
+            a(href="/gyroscopes-and-isotopes/induction", title="Watch our lab induction before you play", class="link-button tutorial") Watch the induction
+
+    div(id="particles")
+
+block javascript
+    if _debug
+        script(data-main="/js/main", src="/js/components/requirejs/require.js")
+    else
+        script(src="/js/main.min.js")

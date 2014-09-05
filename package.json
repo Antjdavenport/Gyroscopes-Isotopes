@@ -1,0 +1,27 @@
+{
+  "name": "gyroscopes-and-isotopes",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "socket.io": "*",
+    "underscore": "*",
+    "jquery-deferred": "*",
+    "mongoose": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-requirejs": "*",
+    "grunt-contrib-handlebars": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-manifest": "*",
+    "grunt-shell": "*"
+  }
+}

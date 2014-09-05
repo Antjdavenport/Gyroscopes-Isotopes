@@ -1,0 +1,184 @@
+@import "compass";
+@import "normalize";
+@import "mixins";
+@import "compass/css3/user-interface";
+
+$color: #fff;
+$black: #222;
+$green: #00DCB4;
+$blue: #008cff;
+$pink: #ff00ff;
+$purple: #8c00ff;
+$yellow: #ffff00;
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+    background: $black;
+}
+
+button,
+input,
+select,
+textarea,
+body {
+    color: $color;
+    font-family: "proxima-nova", helvetica, arial, verdana, sans-serif;
+    @include font-size(14);
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/* Author: Saul Hardman (@saulhardman) */
+
+body {
+    position: relative;
+    height: 100%;
+    background: #222;
+}
+
+.lobby,
+.waiting,
+.game,
+.message {
+    @include transform-origin(0, 0);
+    @include transform(rotate(90deg));
+    * {
+        @include user-select(none);
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.registration {
+    height: 100%;
+
+    .header {
+        display: table;
+        padding: 0 0 112px;
+        height: 100%;
+        width: 100%;
+    }
+
+    strong {
+        text-decoration: underline;
+    }
+
+    .instructions {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 40px;
+        font-weight: 400;
+        @include font-size(14);
+        @include line-height(20);
+        text-align: center;
+    }
+}
+
+h1 {
+    color: #fff;
+}
+
+.banner {
+    @extend .ir;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -54px 0 0 -156px;
+    width: 313px;
+    height: 53px;
+    @include at2x("../img/gyroscopes-and-isotopes-logo", "png", 313px, 53px);
+}
+
+#name-form {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.button {
+    @include font-size(16);
+    font-weight: 600;
+    background: $green;
+
+    &.active {
+        background: $blue;
+    }
+}
+
+.input {
+    color: $black;
+    height: 56px;
+}
+
+.input,
+.button {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    @include line-height(56);
+    border: none;
+    @include border-radius(0);
+}
+
+#electron-blast,
+#ready-button,
+#cancel-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#electron-blast {
+    &.inactive {
+        display: none;
+    }
+}
+
+#player {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
+    width: 100px;
+    height: 100px;
+    @include border-radius(50%);
+}
+
+.player-message {
+
+    @extend .center;
+
+    padding: 0 40px;
+    height: 180px;
+    @include font-size(22);
+    text-align: center;
+
+}
+
+.error-message {
+
+    @extend .player-message;
+
+    &:before {
+
+        display: block;
+        margin: -40px 0 0;
+        content: "\25B2";
+        color: orange;
+        @include font-size(112);
+
+    }
+
+}

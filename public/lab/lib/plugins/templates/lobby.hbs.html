@@ -1,0 +1,18 @@
+<header class="header">
+    <h1 class="banner" role="banner">Gyroscopes &amp; Isotopes</h1>
+</header>
+
+<section class="main" role="main">
+    <p class="instructions">Scan the QR code or navigate to the URL below on a mobile device to join the experiment:-</p>
+    <p><span id="qrcode" data-href="{{controllerUrl}}"></span><span id="or" class="or">Or</span><span id="countdown" class="or hidden"><span class="seconds">5</span></span><span class="shortUrl">{{shortControllerUrl}}</span></p>
+    <ul id="players">
+        <li class="player-slot">1</li>
+        <li class="player-slot">2</li>
+        <li class="player-slot">3</li>
+        <li class="player-slot">4</li>
+        {{#each players}}
+            <li id="{{id}}" class="player" style="background: rgb({{colour}});"><span class="player-name">{{name}}</span></li>
+        {{/each}}
+    </ul>
+    <button id="start-experiment" data-icon="&#x3e;"></button>
+</section>
